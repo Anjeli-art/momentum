@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/owfont-regular.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>momentum</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="player">
+        <div class="player__tools">
+          <div class="player__controls">
+            <button class="player__play-prev player__icon"></button>
+            <button class="player__play player__icon"></button>
+            <button class="player__play-next player__icon"></button>
+          </div>
+          <div class="player__progress-full">
+            <audio 
+              class="player__audio"
+              src="./assets/sounds/Aqua Caelestis.mp3",
+            ></audio>
+            <div class="player__progress-name"></div>
+            <div class="player__progress-mode">
+              <div class="player__progress-container">
+                <div class="player__progress"></div>
+              </div>
+              <div class="player__progress-time"></div>
+              <div class="player__progress-fulltime"></div>
+            </div>
+          </div>
+          <div class="player__note">
+            <div class="player__off-note"></div>
+            <input type="range" class="player__turn-note" min ="0" max = "100" value = "25"></input>
+          </div>
+        </div>
+        <ul class="player__play-list">
+          <li class="player__song">Aqua Caelestis<span class="player__play-mini"></span></li>
+          <li class="player__song">Ennio Morricone<span class="player__play-mini"></span></li>
+          <li class="player__song">River Flows In You<span class="player__play-mini"></span></li>
+          <li class="player__song">Summer Wind<span class="player__play-mini"></span></li>
+        </ul>
+      </div>
+      <div class="weather">
+        <input type="text" class="weather__city" />
+        <i class="weather__icon owf"></i>
+        <div class="weather__error"></div>
+        <div class="weather__description-container">
+          <span class="weather__temperature"></span>
+          <span class="weather-description"></span>
+        </div>
+        <div class="weather__wind"></div>
+        <div class="weather__humidity"></div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="slider">
+        <div class="slider__icons">
+          <button class="slider__icon-prev slider__icon"></button>
+          <button class="slider__icon-next slider__icon"></button>
+        </div>
+        <div class="clock">
+          <time class="clock__time"></time>
+          <div class="clock__date"></div>
+          <div class="clock__greeting-container">
+            <span class="clock__greeting"></span>
+            <input type="text" class="clock__name" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__settings-container">
+        <div class="footer__visible-container">
+          <p class="footer__visible-item">
+            <span class="footer__visible-title">player</span>
+            <span class="footer__visible-state">on</span>
+          </p>
+          <p class="footer__visible-item">
+            <span class="footer__visible-title">player extended</span>
+            <span class="footer__visible-state">on</span>
+          </p>
+          <p class="footer__visible-item">
+            <span class="footer__visible-title">weather</span>
+            <span class="footer__visible-state">on</span>
+          </p>
+          <p class="footer__visible-item">
+            <span class="footer__visible-title">quote</span>
+            <span class="footer__visible-state">on</span>
+          </p>
+          <p class="footer__visible-item">
+            <span class="footer__visible-title">time and date</span>
+            <span class="footer__visible-state">on</span>
+          </p>
+          <p class="footer__visible-item">
+            <span class="footer__visible-title">background</span>
+            <span class="footer__visible-state">on</span>
+          </p>
+          <p class="footer__visible-item">
+            <span class="footer__visible-title">notes</span>
+            <span class="footer__visible-state">off</span>
+          </p>
+        </div>
+        <div class="footer__other-container">
+          <p class="footer__other-item">
+            <span class="footer__other-title">langugages</span>
+            <span class="footer__other-state">ru</span>
+            <span class="footer__other-state">en</span>
+          </p>
+          <p class="footer__other-item">
+            <span class="footer__other-title">background source</span>
+            <span class="footer__other-state">git</span>
+            <span class="footer__other-state">unsplash</span>
+            <span class="footer__other-state">flickr</span>
+          </p>
+          <p class="footer__other-item">
+            <span class="footer__other-title">people</span>
+            <span class="footer__other-state">nature</span>
+            <span class="footer__other-state">city</span>
+            <span class="footer__other-state">space</span>
+          </p>
+        </div>
+      </div>
+      <div class="footer__settings">
+        <button class="footer__settings-btn"></button>
+      </div>
+      <button class="footer__change-quote"></button>
+      <div>
+        <div class="footer__quote"></div>
+        <div class="footer__author"></div>
+      </div>
+    </footer>
+    <!-- <section class="dragndrop">
+      <form action="#" onsubmit="return false" class="dragndrop__form">
+        <input type="text" class="dragndrop__caption" />
+        <textarea name="" id="" cols="10" rows="5" class="dragndrop__text"></textarea>
+        <input type="color" class="dragndrop__color">
+        <button class="dragndrop__btn">send</button>
+      </form>
+    </section> -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
