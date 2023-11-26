@@ -104,12 +104,18 @@ weatherData();
 const baseUrlQuote = "https://type.fit/api/quotes";
 
 const quoteRandom = () => {
-  return Math.floor(Math.random() * 1643);
+  return Math.floor(Math.random() * 16);
+};
+
+const changeString = (str) => {
+  if (str.includes("type.fit")) {
+    return str.substring(0, str.length - 10);
+  } else return str;
 };
 
 const quoteWrite = (obj) => {
   data.quote.quote = obj.text;
-  data.quote.author = obj.author;
+  data.quote.author = changeString(obj.author);
   document.querySelector(".footer__quote").innerHTML = data.quote.quote;
   document.querySelector(".footer__author").innerHTML = data.quote.author;
 };
@@ -445,7 +451,6 @@ audio.addEventListener("ended", () => {
 });
 
 const getUpDate = (e) => {
-  console.log(e);
   const { duration, currentTime } = e.srcElement;
   const progressValue = (currentTime / duration) * 100;
   progress.style.width = `${progressValue}%`;
@@ -485,81 +490,3 @@ const changeNote = () => {
 };
 
 offNote.addEventListener("click", changeNote);
-
-// setting
-
-const btnSetting = document.querySelector(".footer__settings-btn");
-const allSetting = document.querySelector(".footer__settings-container");
-
-const toggleSetting = () => {
-  allSetting.classList.toggle("footer__settings-container--active");
-};
-
-btnSetting.addEventListener("click", toggleSetting);
-
-/*
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  */
-
-// todolist
-
-const noteArr = [];
-
-const inputNote = document.querySelector(".dragndrop__caption");
-const textareaNote = document.querySelector(".dragndrop__text");
-const inputColorNote = document.querySelector(".dragndrop__color");
-const btnNote = document.querySelector(".dragndrop__btn");
-const sectionNote = document.querySelector(".dragndrop");
-
-const getNote = (el) => {
-  let div = document.createElement("div");
-  div.className = "dragndrop__note";
-  div.draggable = "true";
-  div.innerHTML = `<h2 class="dragndrop__note-title">${el.caption}</h2>
-      <p class="dragndrop__note-text">${el.text}</p>`;
-  div.style.backgroundColor = el.color;
-  sectionNote.append(div);
-};
-
-const cleanValueInputNote = () => {
-  inputNote.value = "";
-  textareaNote.value = "";
-};
-
-const makeNewNote = () => {
-  const note = {};
-  note.caption = inputNote.value;
-  note.text = textareaNote.value;
-  note.color = inputColorNote.value;
-  noteArr.push(note);
-  getNote(note);
-  cleanValueInputNote();
-};
-
-btnNote.addEventListener("click", makeNewNote);
-
-const allowDrop = (event) => {
-  event.preventDefault();
-};
-
-sectionNote.ondragover = allowDrop;
